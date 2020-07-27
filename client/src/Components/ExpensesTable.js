@@ -5,7 +5,7 @@ import css from './Css/LabelValues.module.css';
 
 const colorGreen = 'rgb(22, 160, 153)';
 const colorRed = 'rgb(192, 57, 17)';
-const colorGrey = 'rgb(169,169, 180)';
+const colorGrey = 'rgb(166, 183, 194)';
 
 export default function ExpensesTable({ currentExpenses, onEdit, onDelete }) {
   const {
@@ -14,7 +14,6 @@ export default function ExpensesTable({ currentExpenses, onEdit, onDelete }) {
     expenseStyle,
     summuryStyle,
     centerStyle,
-    rightStyle,
   } = styles;
 
   const handleActionClick = (type, id) => {
@@ -34,20 +33,18 @@ export default function ExpensesTable({ currentExpenses, onEdit, onDelete }) {
       <table className="highlight">
         <thead>
           <tr style={summuryStyle}>
-            <th>Dia</th>
-            <th>Categoria</th>
-            <th>Descrição</th>
-            <th>Valor</th>
-            <th>Ações</th>
+            <th style={centerStyle}>Dia</th>
+            <th style={centerStyle}>Categoria</th>
+            <th style={centerStyle}>Descrição</th>
+            <th style={centerStyle}>Valor</th>
+            <th style={centerStyle}>Ações</th>
           </tr>
         </thead>
         <tbody>
           {currentExpenses.map((item, index) => {
             return (
               <tr key={index}>
-                <td style={centerStyle} className={css.classBold}>
-                  {item.day}
-                </td>
+                <td className={`${css.classBold}`}>{item.day}</td>
                 <td
                   style={item.type == '+' ? earningStyle : expenseStyle}
                   className={css.classBold}
@@ -62,11 +59,11 @@ export default function ExpensesTable({ currentExpenses, onEdit, onDelete }) {
                 </td>
                 <td
                   style={item.type == '+' ? earningStyle : expenseStyle}
-                  className={`${css.rightStyle} ${css.classBold}`}
+                  className={`${css.classBold}`}
                 >
                   {formatNumber(item.value)}
                 </td>
-                <td>
+                <td className={`${css.classBold}`}>
                   <Action
                     type="edit"
                     onActionClick={handleActionClick}
@@ -94,21 +91,15 @@ const styles = {
   },
   earningStyle: {
     color: colorGreen,
-    fontSize: 20,
+    fontSize: 19,
   },
 
   expenseStyle: {
     color: colorRed,
-    fontSize: 20,
+    fontSize: 19,
   },
   summuryStyle: {
     backgroundColor: colorGrey,
   },
-
-  centerStyle: {
-    textAlign: 'center',
-  },
-  rightStyle: {
-    textAlign: 'right',
-  },
+  centerStyle: { textAlign: 'center', fontSize: 21 },
 };

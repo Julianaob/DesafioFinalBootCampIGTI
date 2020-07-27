@@ -44,14 +44,14 @@ export default function Period() {
 
   React.useEffect(() => {
     const data = async () => {
-      const countTransactions = currentExpenses.length;
-      const totalEarnings = currentExpenses
+      const countTransactions = filterTransactions.length;
+      const totalEarnings = filterTransactions
         .filter((transaction) => transaction.type === '+')
         .reduce((totalEarnings, transaction) => {
           return totalEarnings + transaction.value;
         }, 0);
 
-      const totalExpenses = currentExpenses
+      const totalExpenses = filterTransactions
         .filter((transaction) => transaction.type === '-')
         .reduce((totalExpenses, transaction) => {
           return totalExpenses + transaction.value;
@@ -67,7 +67,7 @@ export default function Period() {
       });
     };
     data();
-  }, [currentExpenses]);
+  }, [filterTransactions]);
 
   React.useEffect(() => {
     if (filterText.trim() === '') {
@@ -182,9 +182,15 @@ const styles = {
     display: 'flex',
     flexdirection: 'row',
     alignitems: 'center',
-    justifycontent: 'center',
+    justifyContent: 'center',
     margin: '10px',
   },
 
-  boldField: { fontWeight: 'bold', fontSize: 20, width: '200px' },
+  boldField: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    width: '200px',
+    border: '1px #grey  solid',
+    borderRadius: '10px',
+  },
 };

@@ -2,29 +2,18 @@
   border-radius: 5px;
   border: 1px solid rgb(21, 24, 24);
   height: 70px;
-  /* flex-direction: row; */
   margin: 0em;
-  /* text-align: center; */
   padding-left: 100px;
 }
 
 .classBold {
   font-weight: bold;
   font-Size: 20;
+  text-align: center;
 }
 
-.rightStyle {
-  text-align: right;
-}
-
-.input-field input:focus+label {
-  color: #64B5F6 !important;
-}
-
-/* label underline focus color */
-.row .input-field input:focus {
-  border-bottom: 1px solid #64B5F6 !important;
-  box-shadow: 0 1px 0 0 #64B5F6 !important
+.centerStyle {
+  text-align: center;
 }
 
 .alinharCampos {
@@ -32,4 +21,17 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+}
+
+table {
+  border: 1px grey solid !important;
+}
+
+th,
+td {
+  border: 1px grey solid !important;
+}
+
+tr:hover {
+  background-color: rgb(211, 221, 226) !important;
 }

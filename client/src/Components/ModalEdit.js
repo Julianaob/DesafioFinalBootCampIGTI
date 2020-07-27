@@ -40,6 +40,7 @@ export default function ModalEdit({
     radioStyle,
     radioButtonStyle,
     earningExpenseStyle,
+    labelStyle,
   } = styles;
 
   const earningTextStyle = earningExpenseStyle;
@@ -150,7 +151,11 @@ export default function ModalEdit({
                 autoFocus
                 required
               />
-              <label htmlFor="inputDescription" className="active">
+              <label
+                style={labelStyle}
+                htmlFor="inputDescription"
+                className="active"
+              >
                 Descrição:
               </label>
             </div>
@@ -163,7 +168,11 @@ export default function ModalEdit({
                 onChange={handleCategory}
                 required
               />
-              <label htmlFor="inputCategory" className="active">
+              <label
+                style={labelStyle}
+                htmlFor="inputCategory"
+                className="active"
+              >
                 Categoria:
               </label>
             </div>
@@ -179,7 +188,11 @@ export default function ModalEdit({
                   onChange={handleValue}
                   required
                 />
-                <label htmlFor="inputValue" className="active ">
+                <label
+                  style={labelStyle}
+                  htmlFor="inputValue"
+                  className="active "
+                >
                   Valor:
                 </label>
               </div>
@@ -251,5 +264,9 @@ const styles = {
   earningExpenseStyle: {
     fontSize: '1.2rem',
     fontWeight: 'bold',
+  },
+
+  labelStyle: {
+    color: '#64B5F6',
   },
 };

@@ -41,6 +41,7 @@ export default function ModalCreate({
     radioStyle,
     radioButtonStyle,
     earningExpenseStyle,
+    labelStyle,
   } = styles;
 
   const earningTextStyle =
@@ -132,7 +133,11 @@ export default function ModalCreate({
                 autoFocus
                 required
               />
-              <label htmlFor="inputDescription" className="active">
+              <label
+                style={labelStyle}
+                htmlFor="inputDescription"
+                className="active"
+              >
                 Descrição:
               </label>
             </div>
@@ -144,7 +149,11 @@ export default function ModalCreate({
                 onChange={handleCategory}
                 required
               />
-              <label htmlFor="inputCategory" className="active">
+              <label
+                style={labelStyle}
+                htmlFor="inputCategory"
+                className="active"
+              >
                 Categoria:
               </label>
             </div>
@@ -159,7 +168,11 @@ export default function ModalCreate({
                   onChange={handleValue}
                   required
                 />
-                <label htmlFor="inputValue" className="active">
+                <label
+                  style={labelStyle}
+                  htmlFor="inputValue"
+                  className="active"
+                >
                   Valor:
                 </label>
               </div>
@@ -220,6 +233,7 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: '30px',
+    color: '#64B5F6',
   },
 
   radioButtonStyle: {
@@ -231,5 +245,8 @@ const styles = {
   earningExpenseStyle: {
     fontSize: '1.2rem',
     fontWeight: 'bold',
+  },
+  labelStyle: {
+    color: '#64B5F6',
   },
 };
